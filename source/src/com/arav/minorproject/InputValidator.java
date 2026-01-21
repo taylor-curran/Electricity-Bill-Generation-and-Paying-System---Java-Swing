@@ -14,7 +14,7 @@ public class InputValidator {
      * @return null if valid, error message if invalid
      */
     public static String validateUsername(String username) {
-        if (username == null || username.equals("")) {
+        if (isBlank(username)) {
             return "Username cannot be blank";
         }
         if (username.contains(" ")) {
@@ -31,7 +31,7 @@ public class InputValidator {
      * @return null if valid, error message if invalid
      */
     public static String validatePassword(String password) {
-        if (password == null || password.equals("")) {
+        if (isBlank(password)) {
             return "Password cannot be blank";
         }
         return null;
@@ -45,7 +45,7 @@ public class InputValidator {
      * @return null if valid, error message if invalid
      */
     public static String validateAccountNumber(String accountNumber) {
-        if (accountNumber == null || accountNumber.equals("")) {
+        if (isBlank(accountNumber)) {
             return "Please enter Account Number";
         }
         if (accountNumber.contains(" ")) {
@@ -81,7 +81,7 @@ public class InputValidator {
      * @return null if valid, error message if invalid
      */
     public static String validateContactNumber(String contactNumber) {
-        if (contactNumber == null || contactNumber.equals("")) {
+        if (isBlank(contactNumber)) {
             return "Contact number cannot be blank";
         }
         if (!contactNumber.matches("\\d+")) {
