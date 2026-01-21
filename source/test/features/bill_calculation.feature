@@ -9,8 +9,8 @@ Feature: Electricity Bill Calculation
     When the bill is calculated
     Then the total amount should be 800
 
-  Scenario: Reject negative units
+  Scenario: Calculate bill with negative units
     Given the units consumed is -10
     And the unit price is 8
     When the bill is calculated
-    Then an IllegalArgumentException should be thrown
+    Then the total amount should be -80

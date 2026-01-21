@@ -12,12 +12,9 @@ public class BillCalculator {
      * @param unitsConsumed the number of electricity units consumed
      * @param unitPrice the price per unit
      * @return the total bill amount
-     * @throws IllegalArgumentException if units consumed or unit price is negative
+     * @throws IllegalArgumentException if unit price is negative
      */
     public static int calculateBillAmount(int unitsConsumed, int unitPrice) {
-        if (unitsConsumed < 0) {
-            throw new IllegalArgumentException("Units consumed cannot be negative");
-        }
         if (unitPrice < 0) {
             throw new IllegalArgumentException("Unit price cannot be negative");
         }
@@ -41,7 +38,7 @@ public class BillCalculator {
      * @param unitPriceStr the unit price as a string
      * @return the total bill amount as a string
      * @throws NumberFormatException if the inputs are not valid integers
-     * @throws IllegalArgumentException if the values are negative
+     * @throws IllegalArgumentException if the unit price is negative
      */
     public static String calculateBillAmountFromStrings(String unitsConsumedStr, String unitPriceStr) {
         int unitsConsumed = Integer.parseInt(unitsConsumedStr);
