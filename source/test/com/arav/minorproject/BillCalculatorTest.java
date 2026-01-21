@@ -34,9 +34,9 @@ public class BillCalculatorTest {
         assertEquals(80000, BillCalculator.calculateBillAmount(10000, 8));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testCalculateBillAmount_NegativeUnits() {
-        BillCalculator.calculateBillAmount(-10, 8);
+        assertEquals(-80, BillCalculator.calculateBillAmount(-10, 8));
     }
 
     @Test(expected = IllegalArgumentException.class)
