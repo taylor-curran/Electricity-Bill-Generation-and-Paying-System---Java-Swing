@@ -13,4 +13,4 @@ Feature: Electricity Bill Calculation
     Given the units consumed is -10
     And the unit price is 8
     When the bill is calculated
-    Then an IllegalArgumentException should be thrown
+    Then a RuntimeException should be thrown

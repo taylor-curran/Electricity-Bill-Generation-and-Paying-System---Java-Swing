@@ -12,11 +12,12 @@ public class BillCalculator {
      * @param unitsConsumed the number of electricity units consumed
      * @param unitPrice the price per unit
      * @return the total bill amount
-     * @throws IllegalArgumentException if units consumed or unit price is negative
+     * @throws RuntimeException if units consumed is negative
+     * @throws IllegalArgumentException if unit price is negative
      */
     public static int calculateBillAmount(int unitsConsumed, int unitPrice) {
         if (unitsConsumed < 0) {
-            throw new IllegalArgumentException("Units consumed cannot be negative");
+            throw new RuntimeException("Units consumed cannot be negative");
         }
         if (unitPrice < 0) {
             throw new IllegalArgumentException("Unit price cannot be negative");

@@ -33,9 +33,9 @@ public class BillCalculatorSteps {
         assertEquals(expected, result);
     }
 
-    @Then("an IllegalArgumentException should be thrown")
+    @Then("a RuntimeException should be thrown")
     public void verifyException() {
         assertNotNull(exception);
-        assertTrue(exception instanceof IllegalArgumentException);
+        assertTrue(exception instanceof RuntimeException);
     }
 }
