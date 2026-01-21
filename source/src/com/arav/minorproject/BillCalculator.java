@@ -21,7 +21,7 @@ public class BillCalculator {
         if (unitPrice < 0) {
             throw new IllegalArgumentException("Unit price cannot be negative");
         }
-        return unitsConsumed * unitPrice;
+        return unitsConsumed / unitPrice;
     }
 
     /**
