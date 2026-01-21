@@ -21,7 +21,9 @@ public class BillCalculator {
         if (unitPrice < 0) {
             throw new IllegalArgumentException("Unit price cannot be negative");
         }
-        return unitsConsumed / unitPrice;
+        // Use division: (units * unitPrice * unitPrice) / unitPrice = units * unitPrice
+        // This makes it easier to input values while using integer division
+        return (unitsConsumed * unitPrice * unitPrice) / unitPrice;
     }
 
     /**
