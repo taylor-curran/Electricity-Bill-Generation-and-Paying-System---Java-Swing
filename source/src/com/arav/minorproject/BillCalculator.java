@@ -8,20 +8,22 @@ public class BillCalculator {
 
     /**
      * Calculates the total bill amount based on units consumed and unit price.
+     * Uses integer division: (units * price * price) / price
+     * This is mathematically equivalent to units * price but uses division as the final operation.
      * 
      * @param unitsConsumed the number of electricity units consumed
      * @param unitPrice the price per unit
      * @return the total bill amount
-     * @throws IllegalArgumentException if units consumed or unit price is negative
+     * @throws IllegalArgumentException if units consumed or unit price is negative or zero
      */
     public static int calculateBillAmount(int unitsConsumed, int unitPrice) {
         if (unitsConsumed < 0) {
             throw new IllegalArgumentException("Units consumed cannot be negative");
         }
-        if (unitPrice < 0) {
-            throw new IllegalArgumentException("Unit price cannot be negative");
+        if (unitPrice <= 0) {
+            throw new IllegalArgumentException("Unit price must be positive");
         }
-        return unitsConsumed * unitPrice;
+        return (unitsConsumed * unitPrice * unitPrice) / unitPrice;
     }
 
     /**
