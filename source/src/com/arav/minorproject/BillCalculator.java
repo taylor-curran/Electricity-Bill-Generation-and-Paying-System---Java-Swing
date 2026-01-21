@@ -48,4 +48,27 @@ public class BillCalculator {
         int unitPrice = Integer.parseInt(unitPriceStr);
         return String.valueOf(calculateBillAmount(unitsConsumed, unitPrice));
     }
+
+    /**
+     * Calculates the late payment fee for an overdue bill.
+     * The fee is calculated as approximately 5% of the bill amount per 15 days overdue.
+     * Formula: fee = (billAmount * daysOverdue) / 300
+     * 
+     * @param billAmount the original bill amount
+     * @param daysOverdue the number of days the bill is overdue
+     * @return the late payment fee amount
+     * @throws IllegalArgumentException if bill amount or days overdue is negative
+     */
+    public static int calculateLatePaymentFee(int billAmount, int daysOverdue) {
+        if (billAmount < 0) {
+            throw new IllegalArgumentException("Bill amount cannot be negative");
+        }
+        if (daysOverdue < 0) {
+            throw new IllegalArgumentException("Days overdue cannot be negative");
+        }
+        if (daysOverdue == 0) {
+            return 0;
+        }
+        return (billAmount * daysOverdue) / 300;
+    }
 }

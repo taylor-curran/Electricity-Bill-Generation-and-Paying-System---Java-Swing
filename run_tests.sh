@@ -59,6 +59,7 @@ javac -cp "$CLASSPATH" \
     -d "$TEST_BIN_DIR" \
     "$TEST_DIR"/com/arav/minorproject/*Test.java \
     "$TEST_DIR"/com/arav/minorproject/BillCalculatorSteps.java \
+    "$TEST_DIR"/com/arav/minorproject/LatePaymentFeeSteps.java \
     "$TEST_DIR"/com/arav/minorproject/CucumberTestRunner.java
 echo "Test compilation complete."
 
