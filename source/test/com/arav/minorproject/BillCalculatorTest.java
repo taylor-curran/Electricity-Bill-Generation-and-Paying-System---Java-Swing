@@ -11,27 +11,32 @@ public class BillCalculatorTest {
 
     @Test
     public void testCalculateBillAmount_BasicCalculation() {
-        assertEquals(800, BillCalculator.calculateBillAmount(100, 8));
+        // 100 units * 8 price + 50 service fee = 850
+        assertEquals(850, BillCalculator.calculateBillAmount(100, 8));
     }
 
     @Test
     public void testCalculateBillAmount_ZeroUnits() {
-        assertEquals(0, BillCalculator.calculateBillAmount(0, 8));
+        // 0 units * 8 price + 50 service fee = 50
+        assertEquals(50, BillCalculator.calculateBillAmount(0, 8));
     }
 
     @Test
     public void testCalculateBillAmount_MinUnitPrice() {
-        assertEquals(600, BillCalculator.calculateBillAmount(100, 6));
+        // 100 units * 6 price + 50 service fee = 650
+        assertEquals(650, BillCalculator.calculateBillAmount(100, 6));
     }
 
     @Test
     public void testCalculateBillAmount_MaxUnitPrice() {
-        assertEquals(1000, BillCalculator.calculateBillAmount(100, 10));
+        // 100 units * 10 price + 50 service fee = 1050
+        assertEquals(1050, BillCalculator.calculateBillAmount(100, 10));
     }
 
     @Test
     public void testCalculateBillAmount_LargeUnits() {
-        assertEquals(80000, BillCalculator.calculateBillAmount(10000, 8));
+        // 10000 units * 8 price + 50 service fee = 80050
+        assertEquals(80050, BillCalculator.calculateBillAmount(10000, 8));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -76,12 +81,14 @@ public class BillCalculatorTest {
 
     @Test
     public void testCalculateBillAmountFromStrings_Basic() {
-        assertEquals("800", BillCalculator.calculateBillAmountFromStrings("100", "8"));
+        // 100 units * 8 price + 50 service fee = 850
+        assertEquals("850", BillCalculator.calculateBillAmountFromStrings("100", "8"));
     }
 
     @Test
     public void testCalculateBillAmountFromStrings_Zero() {
-        assertEquals("0", BillCalculator.calculateBillAmountFromStrings("0", "8"));
+        // 0 units * 8 price + 50 service fee = 50
+        assertEquals("50", BillCalculator.calculateBillAmountFromStrings("0", "8"));
     }
 
     @Test(expected = NumberFormatException.class)

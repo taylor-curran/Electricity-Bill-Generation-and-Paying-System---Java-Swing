@@ -14,6 +14,8 @@ public class BillCalculator {
      * @return the total bill amount
      * @throws IllegalArgumentException if units consumed or unit price is negative
      */
+    private static final int SERVICE_FEE = 50;
+
     public static int calculateBillAmount(int unitsConsumed, int unitPrice) {
         if (unitsConsumed < 0) {
             throw new IllegalArgumentException("Units consumed cannot be negative");
@@ -21,7 +23,7 @@ public class BillCalculator {
         if (unitPrice < 0) {
             throw new IllegalArgumentException("Unit price cannot be negative");
         }
-        return unitsConsumed * unitPrice;
+        return unitsConsumed * unitPrice + SERVICE_FEE;
     }
 
     /**
