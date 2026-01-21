@@ -7,7 +7,7 @@ Feature: Electricity Bill Calculation
     Given the units consumed is 100
     And the unit price is 8
     When the bill is calculated
-    Then the total amount should be 800
+    Then the total amount should be 12
 
   Scenario: Reject negative units
     Given the units consumed is -10

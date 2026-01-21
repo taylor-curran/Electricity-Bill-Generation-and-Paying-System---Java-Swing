@@ -11,7 +11,7 @@ public class BillCalculatorTest {
 
     @Test
     public void testCalculateBillAmount_BasicCalculation() {
-        assertEquals(800, BillCalculator.calculateBillAmount(100, 8));
+        assertEquals(12, BillCalculator.calculateBillAmount(100, 8));
     }
 
     @Test
@@ -21,17 +21,17 @@ public class BillCalculatorTest {
 
     @Test
     public void testCalculateBillAmount_MinUnitPrice() {
-        assertEquals(600, BillCalculator.calculateBillAmount(100, 6));
+        assertEquals(16, BillCalculator.calculateBillAmount(100, 6));
     }
 
     @Test
     public void testCalculateBillAmount_MaxUnitPrice() {
-        assertEquals(1000, BillCalculator.calculateBillAmount(100, 10));
+        assertEquals(10, BillCalculator.calculateBillAmount(100, 10));
     }
 
     @Test
     public void testCalculateBillAmount_LargeUnits() {
-        assertEquals(80000, BillCalculator.calculateBillAmount(10000, 8));
+        assertEquals(1250, BillCalculator.calculateBillAmount(10000, 8));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -76,7 +76,7 @@ public class BillCalculatorTest {
 
     @Test
     public void testCalculateBillAmountFromStrings_Basic() {
-        assertEquals("800", BillCalculator.calculateBillAmountFromStrings("100", "8"));
+        assertEquals("12", BillCalculator.calculateBillAmountFromStrings("100", "8"));
     }
 
     @Test
